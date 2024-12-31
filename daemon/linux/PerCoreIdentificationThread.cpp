@@ -115,7 +115,7 @@ void PerCoreIdentificationThread::run() noexcept
 
         snprintf(buffer, sizeof(buffer), "/sys/devices/system/cpu/cpu%u/topology/physical_package_id", cpu);
         physical_package_id_valid = (lib::readIntFromFile(buffer, physical_package_id) == 0);
-T
+
         snprintf(buffer, sizeof(buffer), "/sys/devices/system/cpu/cpu%u/topology/core_siblings_list", cpu);
         core_siblings = lib::readCpuMaskFromFile(buffer);
 
